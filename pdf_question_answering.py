@@ -5,7 +5,6 @@ import streamlit as st
 import os
 from langchain_huggingface import HuggingFaceEndpoint
 
-# Function to extract text from a PDF
 def extract_text_from_pdf(pdf_file):
     reader = PyPDF2.PdfReader(pdf_file)
     text = ''
@@ -39,7 +38,6 @@ st.title("PDF Q&A with HuggingFace Model")
 
 pdf_file = st.file_uploader("Upload PDF", type=["pdf"])
 
-# Text Input for questions
 questions_input = st.text_input("Enter your questions (comma separated)", "What is the main topic of the document?, Summarize the key points.")
 
 if st.button("Generate Answers"):
